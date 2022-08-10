@@ -5,6 +5,7 @@
     background-color: black;
     font-family: 'Inter', sans-serif;
     width: 100%;
+    position: relative;
 }
 
 
@@ -256,6 +257,107 @@
     }
 }
 
+
+.edit__profile-button {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: .5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.edit__profile-button_active {
+    display: flex;
+}
+
+
+.profile__button-info {
+    margin: 0 auto;
+    padding: 34px 36px;
+    max-width: 430px;
+    max-height: 330px;
+    border-radius: 10px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 54px;
+    max-width: 358px;
+}
+
+
+.button-info__title {
+    margin: 0;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 900;
+    color: black;
+    position: relative;
+}
+
+
+.edit__form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    position: relative;
+
+}
+
+
+.edit__name {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: .2);
+    height: 27px;
+}
+
+
+.edit__second-name {
+    margin: 0 0 18px 0;
+    padding: 0;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: .2);
+    height: 27px;
+}
+
+
+.edit__profile {
+    width: 358px;
+    height: 50px;
+    background-color: black;
+    border-radius: 2px;
+    color: white;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+
+.close__edit {
+    display: flex;
+    max-width: 32px;
+    max-height: 32px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: -150px;
+    right: -75px;
+    transition: .2s linear;
+}
+
+
+.close__edit:hover {
+    opacity: .6;
+}
 
 .add__photo {
     max-width: 150px;
