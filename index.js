@@ -2,46 +2,46 @@
 
 
 
-const openeditbutton = document.querySelector('.edit__button');
-const editarea = document.querySelector('.edit__profile-button');
-const closeeditarea = document.querySelector('.close__edit-button');
-const startanim = document.querySelector('.profile__button-info');
-const profiname = document.querySelector('.profile__info-title');
-const profinameedit = document.querySelector('.edit__name');
-const profistatus = document.querySelector('.edit__second-name');
-const editprofibutton = document.querySelector('.save__edit-button');
-const profieditsecondname = document.querySelector('.profile__info-subtitle');
+const openEditButton = document.querySelector('.edit__button');
+const editArea = document.querySelector('.edit__profile-button');
+const closeEditArea = document.querySelector('.close__edit-button');
+const startAnim = document.querySelector('.profile__button-info');
+const profiName = document.querySelector('.profile__info-title');
+const profiNameEdit = document.querySelector('.edit__name');
+const profiStatus = document.querySelector('.edit__second-name');
+const editProfiButton = document.querySelector('.save__edit-button');
+const profiEditSecondName = document.querySelector('.profile__info-subtitle');
 
 function openedit() {
-    editarea.classList.add('edit__profile-button_active')
+    editArea.classList.add('edit__profile-button_active')
 };
 function closeedit() {
-    editarea.classList.remove('edit__profile-button_active')
+    editArea.classList.remove('edit__profile-button_active')
 };
 
 function editname() {
-    profiname.textContent = profinameedit.value
+    profiName.textContent = profinameedit.value
 };
 
 
 function editanim() {
-    startanim.classList.add('profile__button-info_active')
+    startAnim.classList.add('profile__button-info_active')
 };
 
 
 function editsecondname() {
-    profieditsecondname.textContent = profistatus.value
+    profiEditSecondName.textContent = profistatus.value
 };
 
-profinameedit.value = profiname.textContent;
-profistatus.value = profieditsecondname.textContent;
+profiNameEdit.value = profiname.textContent;
+profiStatus.value = profieditsecondname.textContent;
 
-openeditbutton.addEventListener('click', openedit);
-closeeditarea.addEventListener('click', closeedit);
-openeditbutton.addEventListener('click', editanim);
-editprofibutton.addEventListener('click', closeedit);
-editprofibutton.addEventListener('click', editname);
-editprofibutton.addEventListener('click', editsecondname);
+openEditButton.addEventListener('click', openedit);
+closeEditArea.addEventListener('click', closeedit);
+openEditButton.addEventListener('click', editanim);
+editProfiButton.addEventListener('click', closeedit);
+editProfiButton.addEventListener('click', editname);
+editProfiButton.addEventListener('click', editsecondname);
 
 
 
