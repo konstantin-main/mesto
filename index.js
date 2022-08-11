@@ -12,36 +12,36 @@ const profiStatus = document.querySelector('.edit__second-name');
 const editProfiButton = document.querySelector('.save__edit-button');
 const profiEditSecondName = document.querySelector('.profile__info-subtitle');
 
-function openedit() {
+function openEdit() {
     editArea.classList.add('edit__profile-button_active')
 };
-function closeedit() {
+function closeEdit() {
     editArea.classList.remove('edit__profile-button_active')
 };
 
-function editname() {
-    profiName.textContent = profinameedit.value
+function editName() {
+    profiName.textContent = profiNameEdit.value
 };
 
 
-function editanim() {
+function editAnim() {
     startAnim.classList.add('profile__button-info_active')
 };
 
 
-function editsecondname() {
-    profiEditSecondName.textContent = profistatus.value
+function editSecondName() {
+    profiEditSecondName.textContent = profiStatus.value
 };
 
-profiNameEdit.value = profiname.textContent;
-profiStatus.value = profieditsecondname.textContent;
+profiNameEdit.value = profiName.textContent;
+profiStatus.value = profiEditSecondName.textContent;
 
-openEditButton.addEventListener('click', openedit);
-closeEditArea.addEventListener('click', closeedit);
-openEditButton.addEventListener('click', editanim);
-editProfiButton.addEventListener('click', closeedit);
-editProfiButton.addEventListener('click', editname);
-editProfiButton.addEventListener('click', editsecondname);
+openEditButton.addEventListener('click', openEdit);
+closeEditArea.addEventListener('click', closeEdit);
+openEditButton.addEventListener('click', editAnim);
+editProfiButton.addEventListener('click', closeEdit);
+editProfiButton.addEventListener('click', editName);
+editProfiButton.addEventListener('click', editSecondName);
 
 
 
