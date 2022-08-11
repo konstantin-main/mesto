@@ -312,6 +312,12 @@
   opacity: 0.2;
 }
 
+@media screen and (max-width: 610px) {
+  .profile__button-info {
+    max-width: 282px;
+    padding: 24px 26px;
+  }
+}
 .profile__button-info_active {
   -webkit-animation: 0.4s show linear forwards;
           animation: 0.4s show linear forwards;
@@ -343,6 +349,12 @@
   position: relative;
 }
 
+@media screen and (max-width: 610px) {
+  .button-info__title {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
 .edit__form {
   display: -ms-grid;
   display: grid;
@@ -352,6 +364,11 @@
   position: relative;
 }
 
+@media screen and (max-width: 610px) {
+  .edit__form {
+    gap: 20px;
+  }
+}
 .edit__name {
   margin: 0;
   padding: 0;
@@ -370,7 +387,7 @@
   height: 27px;
 }
 
-.edit__profile {
+.save__edit-button {
   width: 358px;
   height: 50px;
   background-color: black;
@@ -383,11 +400,16 @@
   transition: 0.3s linear;
 }
 
+@media screen and (max-width: 610px) {
+  .save__edit-button {
+    max-width: 228px;
+  }
+}
 .edit__profile:hover {
   opacity: 0.8;
 }
 
-.close__edit {
+.close__edit-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

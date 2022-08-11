@@ -4,12 +4,12 @@
 
 const openeditbutton = document.querySelector('.edit__button');
 const editarea = document.querySelector('.edit__profile-button');
-const closeeditarea = document.querySelector('.close__edit');
+const closeeditarea = document.querySelector('.close__edit-button');
 const startanim = document.querySelector('.profile__button-info');
 const profiname = document.querySelector('.profile__info-title');
 const profinameedit = document.querySelector('.edit__name');
 const profistatus = document.querySelector('.edit__second-name');
-const editprofibutton = document.querySelector('.edit__profile');
+const editprofibutton = document.querySelector('.save__edit-button');
 const profieditsecondname = document.querySelector('.profile__info-subtitle');
 
 function openedit() {
