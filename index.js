@@ -3,45 +3,68 @@
 
 
 const openEditButton = document.querySelector('.edit__button');
-const editArea = document.querySelector('.edit__profile-button');
-const closeEditArea = document.querySelector('.close__edit-button');
-const startAnim = document.querySelector('.profile__button-info');
-const profiName = document.querySelector('.profile__info-title');
-const profiNameEdit = document.querySelector('.edit__name');
-const profiStatus = document.querySelector('.edit__second-name');
-const editProfiButton = document.querySelector('.save__edit-button');
-const profiEditSecondName = document.querySelector('.profile__info-subtitle');
+const editArea = document.querySelector('.edit__profile-popup');
+const closeEditArea = document.querySelector('.close__profile-popup');
+const startAnimation = document.querySelector('.profile__popup-info');
+const profileName = document.querySelector('.profile__info-header-title');
+const profileNameEdit = document.querySelector('.profile__popup-name');
+const profileStatus = document.querySelector('.profile__popup-second-name');
+const editProfileButton = document.querySelector('.save__profile-popup');
+const profileEditSecondName = document.querySelector('.profile__info-subtitle');
+const disabledLikes = document.querySelectorAll('.photo__grade');
+
+
+
+
+
+
+
 
 function openEdit() {
-    editArea.classList.add('edit__profile-button_active')
+    editArea.classList.add('edit__profile-popup_active');
+    profileNameEdit.value = profileName.textContent;
+    profileStatus.value = profileEditSecondName.textContent;
 };
 function closeEdit() {
-    editArea.classList.remove('edit__profile-button_active')
+    editArea.classList.remove('edit__profile-popup_active')
 };
 
 function editName() {
-    profiName.textContent = profiNameEdit.value
+    profileName.textContent = profileNameEdit.value
 };
 
 
-function editAnim() {
-    startAnim.classList.add('profile__button-info_active')
+function editAnimation() {
+    startAnimation.classList.add('profile__popup-info_active')
 };
 
 
 function editSecondName() {
-    profiEditSecondName.textContent = profiStatus.value
+    profileEditSecondName.textContent = profileStatus.value
 };
 
-profiNameEdit.value = profiName.textContent;
-profiStatus.value = profiEditSecondName.textContent;
 
-openEditButton.addEventListener('click', openEdit);
+
+
+for ( const disabledLike of disabledLikes) {
+    disabledLike.addEventListener('click', () => {
+        disabledLike.classList.toggle('photo__grade_active')
+    });
+};
+
+
+
+openEditButton.addEventListener('click', () => {
+    openEdit();
+    editAnimation();
+
+});
 closeEditArea.addEventListener('click', closeEdit);
-openEditButton.addEventListener('click', editAnim);
-editProfiButton.addEventListener('click', closeEdit);
-editProfiButton.addEventListener('click', editName);
-editProfiButton.addEventListener('click', editSecondName);
+editProfileButton.addEventListener('click', () => {
+    editName();
+    editSecondName();
+    closeEdit();
+});
 
 
 

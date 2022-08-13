@@ -86,27 +86,39 @@
   }
   .profile > *:nth-child(1) {
     -ms-grid-row: 1;
+    grid-row: 1;
     -ms-grid-column: 1;
+    grid-column: 1;
   }
   .profile > *:nth-child(2) {
     -ms-grid-row: 1;
+    grid-row: 1;
     -ms-grid-column: 2;
+    grid-column: 2;
   }
   .profile > *:nth-child(3) {
     -ms-grid-row: 1;
+    grid-row: 1;
     -ms-grid-column: 3;
+    grid-column: 3;
   }
   .profile > *:nth-child(4) {
     -ms-grid-row: 2;
+    grid-row: 2;
     -ms-grid-column: 1;
+    grid-column: 1;
   }
   .profile > *:nth-child(5) {
     -ms-grid-row: 2;
+    grid-row: 2;
     -ms-grid-column: 2;
+    grid-column: 2;
   }
   .profile > *:nth-child(6) {
     -ms-grid-row: 2;
+    grid-row: 2;
     -ms-grid-column: 3;
+    grid-column: 3;
   }
 }
 @media screen and (max-width: 610px) {
@@ -171,6 +183,7 @@
 @media screen and (max-width: 779px) {
   .profile__info {
     -ms-grid-column: 2;
+    grid-column: 2;
         grid-column-start: 2;
     -ms-grid-column-span: 2;
     grid-column-end: 4;
@@ -217,7 +230,7 @@
     margin-bottom: 14px;
   }
 }
-.profile__info-title {
+.profile__info-header-title {
   margin: 0;
   font-size: 42px;
   line-height: 48px;
@@ -227,19 +240,25 @@
 }
 
 @media screen and (max-width: 479px) {
-  .profile__info-title {
+  .profile__info-header-title {
     font-size: 27px;
     line-height: 33px;
     font-weight: 500;
   }
 }
 .edit__button {
+  padding: 0;
+  background: none;
+  border: none;
+  margin-bottom: 10px;
+  margin-left: 18px;
+}
+
+.edit__button-image {
   -ms-flex-item-align: end;
       align-self: flex-end;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
-  margin-bottom: 10px;
-  margin-left: 18px;
 }
 
 @media screen and (max-width: 479px) {
@@ -247,7 +266,7 @@
     max-width: 18px;
   }
 }
-.edit__button:hover {
+.edit__button-image:hover {
   opacity: 0.5;
 }
 
@@ -274,7 +293,7 @@
     margin: 0 auto;
   }
 }
-.edit__profile-button {
+.edit__profile-popup {
   position: fixed;
   left: 0;
   top: 0;
@@ -290,13 +309,13 @@
           align-items: center;
 }
 
-.edit__profile-button_active {
+.edit__profile-popup_active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.profile__button-info {
+.profile__popup-info {
   margin: 0 auto;
   padding: 34px 36px;
   max-width: 430px;
@@ -313,12 +332,12 @@
 }
 
 @media screen and (max-width: 610px) {
-  .profile__button-info {
+  .profile__popup-info {
     max-width: 282px;
     padding: 24px 26px;
   }
 }
-.profile__button-info_active {
+.profile__popup-info_active {
   -webkit-animation: 0.4s show linear forwards;
           animation: 0.4s show linear forwards;
 }
@@ -340,7 +359,7 @@
     opacity: 1;
   }
 }
-.button-info__title {
+.profile__popup-info-title {
   margin: 0;
   font-size: 24px;
   line-height: 29px;
@@ -350,12 +369,12 @@
 }
 
 @media screen and (max-width: 610px) {
-  .button-info__title {
+  .profile__popup-info-title {
     font-size: 20px;
     font-weight: 700;
   }
 }
-.edit__form {
+.profile__popup-form {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -365,11 +384,11 @@
 }
 
 @media screen and (max-width: 610px) {
-  .edit__form {
+  .profile__popup-form {
     gap: 20px;
   }
 }
-.edit__name {
+.profile__popup-name {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -378,7 +397,7 @@
   height: 27px;
 }
 
-.edit__second-name {
+.profile__popup-second-name {
   margin: 0 0 18px 0;
   padding: 0;
   width: 100%;
@@ -387,7 +406,7 @@
   height: 27px;
 }
 
-.save__edit-button {
+.save__profile-popup {
   width: 358px;
   height: 50px;
   background-color: black;
@@ -401,15 +420,15 @@
 }
 
 @media screen and (max-width: 610px) {
-  .save__edit-button {
+  .save__profile-popup {
     max-width: 228px;
   }
 }
-.edit__profile:hover {
+.save__profile-popup:hover {
   opacity: 0.8;
 }
 
-.close__edit-button {
+.close__profile-popup {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -425,7 +444,7 @@
   transition: 0.2s linear;
 }
 
-.close__edit:hover {
+.close__profile-popup:hover {
   opacity: 0.6;
 }
 
@@ -446,8 +465,10 @@
 @media screen and (max-width: 779px) {
   .add__photo {
     -ms-grid-row: 2;
+    grid-row: 2;
         grid-row-start: 2;
     -ms-grid-column: 2;
+    grid-column: 2;
         grid-column-start: 2;
   }
 }
@@ -601,6 +622,11 @@
   background-image: url("../../pictures/like.svg");
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
+  cursor: pointer;
+}
+
+.photo__grade_active {
+  background-image: url("../../pictures/active like.svg");
 }
 
 .photo__grade:hover {

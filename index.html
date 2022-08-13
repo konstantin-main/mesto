@@ -13,24 +13,13 @@
         <header class="header">
             <img src="./pictures/logo.svg" alt="Mesto Russia" class="logo">
         </header>
-        <div class="main">
+        <main class="main">
             <section class="profile">
                 <img src="./pictures/ava.png" alt="profile avatar" class="profile__avatar">
                 <div class="profile__info">
                     <div class="profile__info-header">
-                    <h1 class="profile__info-title">Жак-Ив Кусто</h1>
-                    <img src="./pictures/Edit Button.svg" alt="edit button" class="edit__button">
-                    </div>
-                    <div class="edit__profile-button">
-                        <div class="profile__button-info">
-                            <h1 class="button-info__title">Редактировать профиль</h1>
-                            <form action="" class="edit__form">
-                                <input type="text" class="edit__name" name="your name">
-                                <input type="text" class="edit__second-name" name="your second name">
-                                <input type="button" class="save__edit-button" value="Сохранить">
-                                <button type="button" class="close__edit-button"><img src="./pictures/Close edit.svg" alt="close button" class="close__edit-image"></button>
-                            </form>
-                        </div>
+                    <h1 class="profile__info-header-title">Жак-Ив Кусто</h1>
+                    <button class="edit__button"><img src="./pictures/Edit Button.svg" alt="edit button" class="edit__button-image"></button>
                     </div>
                     <p class="profile__info-subtitle">Исследователь океана</p>
                 </div>
@@ -80,10 +69,20 @@
                     </div>
                 </div>
             </section>
-        </div>
         <footer class="footer">
             <p class="footer__text">© 2020 Mesto Russia</p>
         </footer>
+    </div>
+    <div class="edit__profile-popup">
+        <div class="profile__popup-info">
+            <h1 class="profile__popup-info-title">Редактировать профиль</h1>
+            <form action="" class="profile__popup-form">
+                <input type="text" class="profile__popup-name" name="your name">
+                <input type="text" class="profile__popup-second-name" name="your second name">
+                <input type="button" class="save__profile-popup" value="Сохранить">
+                <button type="button" class="close__profile-popup"><img src="./pictures/Close edit.svg" alt="close button" class="close__edit-image"></button>
+            </form>
+        </div>
     </div>
 <script src="./index.js"></script>
 </body>
