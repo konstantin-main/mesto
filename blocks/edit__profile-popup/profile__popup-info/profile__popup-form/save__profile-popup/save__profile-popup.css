@@ -1,0 +1,21 @@
+.save__profile-popup {
+    width: 358px;
+    height: 50px;
+    background-color: black;
+    border-radius: 2px;
+    color: white;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+  }
+  
+  @media screen and (max-width: 610px) {
+    .save__profile-popup {
+      max-width: 228px;
+    }
+  }
+  .save__profile-popup:hover {
+    opacity: 0.8;
+  }

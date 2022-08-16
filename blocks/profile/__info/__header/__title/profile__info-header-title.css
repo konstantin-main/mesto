@@ -1,0 +1,16 @@
+.profile__info-header-title {
+    margin: 0;
+    font-size: 42px;
+    line-height: 48px;
+    font-weight: 500;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  
+  @media screen and (max-width: 479px) {
+    .profile__info-header-title {
+      font-size: 27px;
+      line-height: 33px;
+      font-weight: 500;
+    }
+  }

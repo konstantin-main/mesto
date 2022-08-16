@@ -1,0 +1,81 @@
+.profile {
+    margin: 0 auto;
+    margin-bottom: 47px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 880px;
+  }
+  
+  @media screen and (max-width: 1023px) {
+    .profile {
+      max-width: 680px;
+    }
+  }
+  @media screen and (max-width: 779px) {
+    .profile {
+      max-width: 480px;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    .profile > *:nth-child(1) {
+      -ms-grid-row: 1;
+      grid-row: 1;
+      -ms-grid-column: 1;
+      grid-column: 1;
+    }
+    .profile > *:nth-child(2) {
+      -ms-grid-row: 1;
+      grid-row: 1;
+      -ms-grid-column: 2;
+      grid-column: 2;
+    }
+    .profile > *:nth-child(3) {
+      -ms-grid-row: 1;
+      grid-row: 1;
+      -ms-grid-column: 3;
+      grid-column: 3;
+    }
+    .profile > *:nth-child(4) {
+      -ms-grid-row: 2;
+      grid-row: 2;
+      -ms-grid-column: 1;
+      grid-column: 1;
+    }
+    .profile > *:nth-child(5) {
+      -ms-grid-row: 2;
+      grid-row: 2;
+      -ms-grid-column: 2;
+      grid-column: 2;
+    }
+    .profile > *:nth-child(6) {
+      -ms-grid-row: 2;
+      grid-row: 2;
+      -ms-grid-column: 3;
+      grid-column: 3;
+    }
+  }
+  @media screen and (max-width: 610px) {
+    .profile {
+      max-width: 320px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+  }
+  @media screen and (max-width: 479px) {
+    .profile {
+      max-width: 282px;
+    }
+  }

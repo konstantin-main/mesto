@@ -1,0 +1,45 @@
+.profile__popup-info {
+    margin: 0 auto;
+    padding: 34px 36px;
+    max-width: 430px;
+    max-height: 330px;
+    border-radius: 10px;
+    background-color: white;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 54px;
+    max-width: 358px;
+    opacity: 0.2;
+  }
+  
+  @media screen and (max-width: 610px) {
+    .profile__popup-info {
+      max-width: 282px;
+      padding: 24px 26px;
+    }
+  }
+  .profile__popup-info_active {
+    -webkit-animation: 0.4s show linear forwards;
+            animation: 0.4s show linear forwards;
+  }
+  
+  @-webkit-keyframes show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

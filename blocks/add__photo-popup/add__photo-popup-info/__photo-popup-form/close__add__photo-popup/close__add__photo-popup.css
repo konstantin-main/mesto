@@ -1,0 +1,19 @@
+.close__add__photo-popup {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 32px;
+    max-height: 32px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: -150px;
+    right: -75px;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+  }
+  
+  .close__add__photo-popup:hover {
+    opacity: 0.6;
+  }

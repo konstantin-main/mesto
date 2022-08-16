@@ -1,0 +1,25 @@
+.photo {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  @media screen and (max-width: 1023px) {
+    .photo {
+      width: 331px;
+    }
+  }
+  @media screen and (max-width: 779px) {
+    .photo {
+      width: 480px;
+    }
+  }
+  @media screen and (max-width: 610px) {
+    .photo {
+      width: 400px;
+    }
+  }
+  @media screen and (max-width: 479px) {
+    .photo {
+      width: 282px;
+    }
+  }

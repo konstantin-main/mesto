@@ -1,0 +1,42 @@
+.add__photo {
+    max-width: 150px;
+    max-height: 50px;
+    border: 1px solid white;
+    background-color: black;
+    padding: 14px 64px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+    margin-left: auto;
+  }
+  
+  @media screen and (max-width: 779px) {
+    .add__photo {
+      -ms-grid-row: 2;
+      grid-row: 2;
+          grid-row-start: 2;
+      -ms-grid-column: 2;
+      grid-column: 2;
+          grid-column-start: 2;
+    }
+  }
+  @media screen and (max-width: 610px) {
+    .add__photo {
+      margin-left: 0;
+      max-width: 250px;
+      max-height: 150px;
+      padding: 32px 114px;
+    }
+  }
+  @media screen and (max-width: 479px) {
+    .add__photo {
+      max-width: 282px;
+      max-height: 50px;
+      padding: 17px 134px;
+    }
+  }
+  .add__photo:hover {
+    opacity: 0.5;
+  }

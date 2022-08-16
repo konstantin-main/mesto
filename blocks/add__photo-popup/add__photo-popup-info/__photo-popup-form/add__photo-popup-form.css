@@ -1,0 +1,14 @@
+.add__photo-popup-form {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    position: relative;
+  }
+  
+  @media screen and (max-width: 610px) {
+    .add__photo-popup-form {
+      gap: 20px;
+    }
+  }

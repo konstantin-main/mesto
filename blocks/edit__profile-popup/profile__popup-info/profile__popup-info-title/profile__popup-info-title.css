@@ -1,0 +1,15 @@
+.profile__popup-info-title {
+    margin: 0;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 900;
+    color: black;
+    position: relative;
+  }
+  
+  @media screen and (max-width: 610px) {
+    .profile__popup-info-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }

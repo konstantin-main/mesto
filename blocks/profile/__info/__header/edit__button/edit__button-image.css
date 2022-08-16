@@ -1,0 +1,15 @@
+.edit__button-image {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+  }
+  
+  @media screen and (max-width: 479px) {
+    .edit__button {
+      max-width: 18px;
+    }
+  }
+  .edit__button-image:hover {
+    opacity: 0.5;
+  }

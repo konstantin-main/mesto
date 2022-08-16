@@ -1,7 +1,4 @@
 //Document Object model
-
-
-
 const openEditButton = document.querySelector('.edit__button');
 const editArea = document.querySelector('.edit__profile-popup');
 const closeEditArea = document.querySelector('.close__profile-popup');
@@ -12,6 +9,7 @@ const profileStatus = document.querySelector('.profile__popup-second-name');
 const editProfileButton = document.querySelector('.save__profile-popup');
 const profileEditSecondName = document.querySelector('.profile__info-subtitle');
 const disabledLikes = document.querySelectorAll('.photo__grade');
+const buttonAddPhoto = document.querySelector('.add__photo');
 
 
 
