@@ -78,7 +78,7 @@
             <h1 class="profile__popup-info-title">Редактировать профиль</h1>
             <form action="" class="profile__popup-form">
                 <input type="text" class="profile__popup-name" name="your name">
-                <input type="text" class="profile__popup-second-name" name="your second name">
+                <input type="url" class="profile__popup-second-name" name="your second name">
                 <input type="button" class="save__profile-popup" value="Сохранить">
                 <button type="button" class="close__profile-popup"><img src="./pictures/Close edit.svg" alt="close button" class="close__edit-image"></button>
             </form>
@@ -88,13 +88,14 @@
         <div class="add__photo-popup-info">
             <h1 class="add__photo-popup-info-title">Новое место</h1>
             <form action="" class="add__photo-popup-form">
-                <input type="text" class="add__photo-popup-name" name="your name">
-                <input type="text" class="add__photo-popup-second-name" name="your second name">
+                <input type="text" class="add__photo-popup-name" name="your name" value="Название места">
+                <input type="photo" class="add__photo-popup-second-name" name="your second name" value="вставьте ссылку">
                 <input type="button" class="save__add__photo-popup" value="Сохранить">
                 <button type="button" class="close__add__photo-popup"><img src="./pictures/Close edit.svg" alt="close button" class="close__edit-image"></button>
             </form>
         </div>
     </div>
-<script src="./index.js"></script>
+<script src="./Edit-popup.js"></script>
+<script src="./add__photo-popup.js"></script>
 </body>
 </html>

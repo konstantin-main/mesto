@@ -9,7 +9,7 @@ const profileStatus = document.querySelector('.profile__popup-second-name');
 const editProfileButton = document.querySelector('.save__profile-popup');
 const profileEditSecondName = document.querySelector('.profile__info-subtitle');
 const disabledLikes = document.querySelectorAll('.photo__grade');
-const buttonAddPhoto = document.querySelector('.add__photo');
+
 
 
 
