@@ -1,4 +1,4 @@
-.add__photo-popup-form {
+.popup__form {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr;
@@ -8,7 +8,7 @@
   }
   
   @media screen and (max-width: 610px) {
-    .add__photo-popup-form {
+    .popup__form {
       gap: 20px;
     }
   }

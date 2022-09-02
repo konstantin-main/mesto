@@ -26,82 +26,45 @@
                 <button class="add__photo"><img src="./pictures/плюсик внутри кнопки.svg" alt="plus" class="plus"></button>
             </section>
             <section class="gallery">
-                <div class="gallery__photo">
-                    <img src="./pictures/карачевск.png" alt="Karachevsk" class="photo">
-                    <div class="photo__info">
-                        <h2 class="photo__info-title">Карачевск</h2>
-                        <div class="photo__grade"></div>
-                    </div>
-                    <button class="remove__photo"><img src="./pictures/Close edit.svg" alt="" class="remove__photo-image"></button>
-                </div>
-                <div class="gallery__photo">
-                    <img src="./pictures/Эльбрус.png" alt="Elbrus" class="photo">
-                    <div class="photo__info">
-                        <h2 class="photo__info-title">Гора Эльбрус</h2>
-                        <div class="photo__grade"></div>
-                    </div>
-                    <button class="remove__photo"><img src="./pictures/Close edit.svg" alt="" class="remove__photo-image"></button>
-                </div>
-                <div class="gallery__photo">
-                    <img src="./pictures/домбай.png" alt="Dombay" class="photo">
-                    <div class="photo__info">
-                        <h2 class="photo__info-title">Домбай</h2>
-                        <div class="photo__grade"></div>
-                    </div>
-                    <button class="remove__photo"><img src="./pictures/Close edit.svg" alt="" class="remove__photo-image"></button>
-                </div>
-                <div class="gallery__photo">
-                    <img src="./pictures/Эльбрус.png" alt="Elbrus" class="photo">
-                    <div class="photo__info">
-                        <h2 class="photo__info-title">Гора Эльбрус</h2>
-                        <div class="photo__grade"></div>
-                    </div>
-                    <button class="remove__photo"><img src="./pictures/Close edit.svg" alt="" class="remove__photo-image"></button>
-                </div>
-                <div class="gallery__photo">
-                    <img src="./pictures/домбай.png" alt="" class="photo">
-                    <div class="photo__info">
-                        <h2 class="photo__info-title">Домбай</h2>
-                        <div class="photo__grade"></div>
-                    </div>
-                    <button class="remove__photo"><img src="./pictures/Close edit.svg" alt="" class="remove__photo-image"></button>
-                </div>
-                <div class="gallery__photo">
-                    <img src="./pictures/карачевск.png" alt="Karachevsk" class="photo">
-                    <div class="photo__info">
-                        <h2 class="photo__info-title">Карачево-Ч...</h2>
-                        <div class="photo__grade"></div>
-                    </div>
-                    <button class="remove__photo"><img src="./pictures/Close edit.svg" alt="" class="remove__photo-image"></button>
-                </div>
+                <template id="gallary__photo">
+                    <div class="gallery__photo">
+                        <img  class="photo">
+                        <div class="photo__info">
+                            <h2 class="photo__info-title"></h2>
+                            <div class="photo__grade"></div>
+                        </div>
+                        <button class="remove__photo"><img src="./pictures/delete_button.svg" alt="delete_button" class="remove__photo-image"></button>
+                </template>
             </section>
         <footer class="footer">
             <p class="footer__text">© 2020 Mesto Russia</p>
         </footer>
     </div>
-    <div class="edit__profile-popup">
-        <div class="profile__popup-info">
-            <h1 class="profile__popup-info-title">Редактировать профиль</h1>
-            <form action="" class="profile__popup-form">
-                <input type="text" class="profile__popup-name" name="your name">
-                <input type="url" class="profile__popup-second-name" name="your second name">
-                <input type="button" class="save__profile-popup" value="Сохранить">
-                <button type="button" class="close__profile-popup"><img src="./pictures/Close edit.svg" alt="close button" class="close__edit-image"></button>
+    <div class="popup popup_type_profie">
+        <div class="popup__info popup__info_type_profile">
+            <h1 class="popup__title popup__title_type_profile">Редактировать профиль</h1>
+            <form action="" class="popup__form popup__form_type_profile">
+                <input type="text" class="popup__form-name popup__form-name_type_profile" name="your name">
+                <input type="url" class="popup__form-second-name popup__form-second-name_type_profile" name="your second name">
+                <input type="button" class="popup__save popup__save_type_profile" value="Сохранить">
+                <button type="button" class="popup__close popup__close_type_profile"><img src="./pictures/Close edit.svg" alt="close button" class="close__edit-image"></button>
             </form>
         </div>
     </div>
-    <div class="add__photo-popup">
-        <div class="add__photo-popup-info">
-            <h1 class="add__photo-popup-info-title">Новое место</h1>
-            <form action="" class="add__photo-popup-form">
-                <input type="text" class="add__photo-popup-name" name="your name" value="Название места">
-                <input type="photo" class="add__photo-popup-second-name" name="your second name" value="вставьте ссылку">
-                <input type="button" class="save__add__photo-popup" value="Сохранить">
-                <button type="button" class="close__add_photo-popup"><img src="./pictures/Close edit.svg" alt="close button" class="close__edit-image"></button>
+    <div class="popup popup_type_photo">
+        <div class="popup__info popup__info_type_photo">
+            <h1 class="popup__title popup__title_type_photo">Новое место</h1>
+            <form action="" class="popup__form popup__form_type_photo">
+                <input type="text" class="popup__form-name popup__form-name_type_photo" name="your name" placeholder="Название места">
+                <input type="photo" class="popup__form-second-name popup__form-second-name_type_photo" name="your second name" placeholder="Вставьте ссылку">
+                <input type="button" class="popup__save popup__save_type_photo" value="Сохранить">
+                <button type="button" class="popup__close popup__close_type_photo"><img src="./pictures/Close edit.svg" alt="close button" class="close__edit-image"></button>
             </form>
         </div>
     </div>
-<script src="./Edit-popup.js"></script>
+<script src="./index.js"></script>
 </body>
 </html>
+
+
 

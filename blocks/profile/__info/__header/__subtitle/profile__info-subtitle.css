@@ -4,7 +4,11 @@
     line-height: 22px;
     font-weight: 400;
     -ms-flex-item-align: start;
-        align-self: flex-start;
+      align-self: flex-start;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 200px ;
   }
   
   @media screen and (max-width: 610px) {

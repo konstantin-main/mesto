@@ -1,8 +1,9 @@
-.profile__popup-second-name {
-    margin: 0 0 18px 0;
+.popup__form-name {
+    margin: 0;
     padding: 0;
     width: 100%;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     height: 27px;
   }
+  

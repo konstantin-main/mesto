@@ -7,15 +7,16 @@
     right: 20px;
     border: none;
     cursor: pointer;
-    opacity: 0;
     display: flex;
     padding: 0;
-    transition: .3s linear;
+    transition: .2s linear;
 }
 
-.remove__photo_active {
-    opacity: .8;
-} 
+.remove__photo:hover {
+    opacity: .6;
+}
+
+
 
 .remove__photo-image {
     max-width: 20px;

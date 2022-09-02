@@ -6,3 +6,10 @@
     margin-left: 18px;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 779px) {
+    .edit__button {
+      margin-left: 15px;
+      margin-bottom: 18px;
+    }
+  }

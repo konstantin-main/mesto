@@ -1,4 +1,4 @@
-.save__add__photo-popup {
+.popup__save {
     width: 358px;
     height: 50px;
     background-color: black;
@@ -9,13 +9,14 @@
     font-weight: 400;
     -webkit-transition: 0.3s linear;
     transition: 0.3s linear;
+    cursor: pointer;
   }
   
   @media screen and (max-width: 610px) {
-    .save__add__photo-popup {
+    .popup__save {
       max-width: 228px;
     }
   }
-  .save__add__photo-popup:hover {
+  .popup__save:hover {
     opacity: 0.8;
   }

@@ -59,7 +59,7 @@ editProfileButton.addEventListener('click', () => {
 
 
 const addPhotoButton = document.querySelector('.add__photo');
-const addPhotoPopup = document.querySelector('.add__photo-popup');
+const addPhotoPopup = document.querySelector('.popup_type_photo');
 const closePhotoPopup = document.querySelector('.close__add_photo-popup');
 
 
@@ -74,9 +74,9 @@ addPhotoButton.addEventListener('click', () => {
 });
 
 
-function openAddition() {
-    const addPhotoPopupInfo = document.querySelector('.add__photo-popup-info');
-    addPhotoPopup.classList.add('add__photo-popup_active');
+function openAddition(element1, element2) {
+    
+    addPhotoPopup.classList.add('popup_active');
     addPhotoPopupInfo.classList.add('add__photo-popup-info_active')
 };
 
@@ -103,7 +103,7 @@ saveAddButton.addEventListener('click', () => {
 })
 
 function saveAddition() {
-    addPhotoPopup.classList.remove('add__photo-popup_active');
+    addPhotoPopup.classList.remove('popup_active');
 }
 
 

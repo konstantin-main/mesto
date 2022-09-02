@@ -11,6 +11,12 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+
+  @media screen and (max-width: 779px) {
+    .profile__info-header {
+      justify-content: stretch;
+    }
+  }
   
   @media screen and (max-width: 610px) {
     .profile__info-header {

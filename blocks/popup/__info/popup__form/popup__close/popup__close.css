@@ -1,4 +1,4 @@
-.close__add_photo-popup {
+.popup__close {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -10,11 +10,11 @@
     position: absolute;
     top: -150px;
     right: -75px;
-    cursor: pointer;
     -webkit-transition: 0.2s linear;
     transition: 0.2s linear;
+    cursor: pointer;
   }
   
-  .close__add_photo-popup:hover {
+  .popup__close:hover {
     opacity: 0.6;
   }

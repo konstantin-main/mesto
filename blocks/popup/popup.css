@@ -1,4 +1,4 @@
-.edit__profile-popup {
+.popup {
     position: fixed;
     left: 0;
     top: 0;
@@ -14,7 +14,7 @@
             align-items: center;
   }
   
-  .edit__profile-popup_active {
+  .popup_active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
