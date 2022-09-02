@@ -11,12 +11,11 @@ const addPhotoButton = document.querySelector('.add__photo');
 const addPhotoPopup = document.querySelector('.popup_type_photo');
 const closeAddPhotoPopup = document.querySelector('.popup__close_type_photo');
 const saveAddphotoPopup = document.querySelector('.popup__save_type_photo');
-const addphotoPopupinfo = document.querySelector('.popup__info_type_photo');
-const disabledLikes = document.querySelectorAll('.photo__grade');
+const addphotoPopupinfo = document.querySelector('.popup__info_type_photo');;
 const PhotoName = document.querySelector('.popup__form-name_type_photo')
 const photoURL = document.querySelector('.popup__form-second-name_type_photo');
 const gallery = document.querySelector('.gallery');
-const initialCards = [
+let initialCards = [
     {
     name:'Карачевск',
     link:'./pictures/карачевск.png',
@@ -67,7 +66,7 @@ const initialCards = [
     }
     ];
 
-    console.log(initialCards.link)
+
 
 
 
@@ -83,26 +82,31 @@ function startAnimationPopup(element) {
     element.classList.add('popup__info_active')
 }
 
-for (let disabledLike of disabledLikes) {
-    disabledLike.addEventListener('click', () => {
-        disabledLike.classList.toggle('photo__grade_active');
-        console.log('Ты все правильно сделал')
-    })
-}
 
 
-function addPhoto(initialCardsLink, initialCardsName) {
+
+
+
+
+function photo(initialCardsLink, initialCardsName) {
     const photoTemplate = document.querySelector('#gallary__photo').content;
     const photoContainer = photoTemplate.querySelector('.gallery__photo').cloneNode(true);
     photoContainer.querySelector('.photo__info-title').textContent = initialCardsName;
     photoContainer.querySelector('.photo').setAttribute('src', `${initialCardsLink}`);
     photoContainer.querySelector('.photo').setAttribute('alt', `${initialCardsLink}`);
     gallery.prepend(photoContainer);
+    let disabledLikes = photoContainer.querySelectorAll('.photo__grade');
+    for (let disabledLike of disabledLikes) {
+        disabledLike.addEventListener('click', () => {
+            disabledLike.classList.toggle('photo__grade_active');
+            console.log('Ты все правильно сделал')
+        })
+    }
 
 }
 
 for (let initialCard of initialCards ) {
-    addPhoto(initialCard.link, initialCard.name)
+    photo(initialCard.link, initialCard.name)
 }
 
 
@@ -142,6 +146,7 @@ closeAddPhotoPopup.addEventListener('click', () => {
 
 saveAddphotoPopup.addEventListener('click', () => {
     closePopup(addPhotoPopup);
-    addPhoto(photoURL, PhotoName)
-
+    initialCards.unshift({name: `${PhotoName.value}`, link: `${photoURL.value}`});
+    console.log(initialCards)
+        photo(initialCards[0].link, initialCards[0].name)
 })
