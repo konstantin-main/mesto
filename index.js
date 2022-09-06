@@ -9,6 +9,8 @@ const closeProfileButton = document.querySelector('.popup__close_type_profile')
 const saveprofileButton = document.querySelector('.popup__save_type_profile')
 const addPhotoButton = document.querySelector('.add__photo');
 const addPhotoPopup = document.querySelector('.popup_type_photo');
+const popupName = document.querySelector('.popup__form-name_type_photo');
+const popupSecondName = document.querySelector('.popup__form-second-name_type_photo');
 const closeAddPhotoPopup = document.querySelector('.popup__close_type_photo');
 const saveAddphotoPopup = document.querySelector('.popup__save_type_photo');
 const addphotoPopupinfo = document.querySelector('.popup__info_type_photo');;
@@ -65,6 +67,13 @@ let initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
     ];
+const galleryTemplate = document.querySelector('#gallary__photo').content;
+const photoContainer = galleryTemplate.querySelector('.gallery__photo').cloneNode(true);
+let photos = photoContainer.querySelector('.photo');
+let disabledLikes = photoContainer.querySelectorAll('.photo__grade');
+let PhotoTitle = photoContainer.querySelector('.photo__info-title');
+let body =document.querySelector('.root')
+
 
 
 
@@ -89,28 +98,54 @@ function startAnimationPopup(element) {
 
 
 function photo(initialCardsLink, initialCardsName) {
-    const photoTemplate = document.querySelector('#gallary__photo').content;
-    const photoContainer = photoTemplate.querySelector('.gallery__photo').cloneNode(true);
-    photoContainer.querySelector('.photo__info-title').textContent = initialCardsName;
-    photoContainer.querySelector('.photo').setAttribute('src', `${initialCardsLink}`);
-    photoContainer.querySelector('.photo').setAttribute('alt', `${initialCardsLink}`);
-    gallery.prepend(photoContainer);
+    const galleryTemplate = document.querySelector('#gallary__photo').content;
+    const photoContainer = galleryTemplate.querySelector('.gallery__photo').cloneNode(true);
+    let photos = photoContainer.querySelector('.photo');
     let disabledLikes = photoContainer.querySelectorAll('.photo__grade');
+    let PhotoTitle = photoContainer.querySelector('.photo__info-title');
+    PhotoTitle.textContent = initialCardsName;
+    photos.setAttribute('src', `${initialCardsLink}`);
+    photos.setAttribute('alt', `${initialCardsName}`);
+    gallery.prepend(photoContainer);
     for (let disabledLike of disabledLikes) {
         disabledLike.addEventListener('click', () => {
             disabledLike.classList.toggle('photo__grade_active');
             console.log('Ты все правильно сделал')
         })
-    }
-
+    };
+    photos.addEventListener('click', (element) => {
+        increasePhoto(photos.src, photos.alt);
+    })
+    
 }
 
-for (let initialCard of initialCards ) {
-    photo(initialCard.link, initialCard.name)
-}
 
 
+initialCards.forEach( function(initialCards) {
+    photo(initialCards.link, initialCards.name)
+});
 
+
+function increasePhoto(photoMeaning, photoNaming) {
+    const photoTemplate = document.querySelector('#popup__type_increase-photo').content;
+    const popupTypePhoto = photoTemplate.querySelector('.popup__type_increase-photo').cloneNode(true);
+    let bigPhoto = popupTypePhoto.querySelector('.popup__type_increase-photo-image');
+    let bigPhototitle = popupTypePhoto.querySelector('.popup__type_increase-photo-title');
+    bigPhoto.src = photoMeaning;
+    bigPhototitle.textContent = photoNaming;
+    popupTypePhoto.addEventListener('click', () => {
+        popupTypePhoto.remove();
+    })
+    console.log(popupTypePhoto)
+    body.append(popupTypePhoto);
+
+
+};
+
+
+photos.addEventListener('click',  (event)=> {
+    console.log(event.target)
+})
 
 
 editbutton.addEventListener('click', () => {
@@ -136,6 +171,9 @@ saveprofileButton.addEventListener('click', () => {
 addPhotoButton.addEventListener('click', () => {
     openPopup(addPhotoPopup);
     startAnimationPopup(addphotoPopupinfo);
+    popupName.value = '';
+    popupSecondName.value = '';
+    console.log(popupName.value, popupSecondName.value);
 })
 
 
@@ -145,8 +183,12 @@ closeAddPhotoPopup.addEventListener('click', () => {
 
 
 saveAddphotoPopup.addEventListener('click', () => {
-    closePopup(addPhotoPopup);
-    initialCards.unshift({name: `${PhotoName.value}`, link: `${photoURL.value}`});
-    console.log(initialCards)
+        closePopup(addPhotoPopup);
+        initialCards.unshift({name: `${PhotoName.value}`, link: `${photoURL.value}`});
+        console.log(initialCards)
         photo(initialCards[0].link, initialCards[0].name)
 })
+
+
+
+

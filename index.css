@@ -29,3 +29,7 @@
 @import url("./blocks/popup/__info/popup__form/__form-second-name/popup__form-second-name.css");
 @import url("./blocks/popup/__info/popup__form/popup__save/popup__save.css");
 @import url("./blocks/popup/__info/popup__form/popup__close/popup__close.css");
+@import url("./blocks/popup__type_increase-photo/popup__type_increase-photo.css");
+@import url("./blocks/popup__type_increase-photo/-info/popup__type_increase-photo-info.css");
+@import url("./blocks/popup__type_increase-photo/-info/-image/popup__type_increase-photo-image.css");
+@import url("./blocks/popup__type_increase-photo/-info/-title/popup__type_increase-photo-title.css");
