@@ -79,6 +79,7 @@ let body =document.querySelector('.root')
 
 
 
+
 function openPopup(element) {
     element.classList.add('popup_active');
 }
@@ -103,6 +104,10 @@ function photo(initialCardsLink, initialCardsName) {
     let photos = photoContainer.querySelector('.photo');
     let disabledLikes = photoContainer.querySelectorAll('.photo__grade');
     let PhotoTitle = photoContainer.querySelector('.photo__info-title');
+    let removePhoto = photoContainer.querySelector('.remove__photo');
+    removePhoto.addEventListener('click', () => {
+        photoContainer.remove();
+    })
     PhotoTitle.textContent = initialCardsName;
     photos.setAttribute('src', `${initialCardsLink}`);
     photos.setAttribute('alt', `${initialCardsName}`);
