@@ -9,13 +9,11 @@ const closeProfileButton = document.querySelector('.popup__close_type_profile')
 const saveprofileButton = document.querySelector('.popup__save_type_profile')
 const addPhotoButton = document.querySelector('.add__photo');
 const addPhotoPopup = document.querySelector('.popup_type_photo');
-const popupName = document.querySelector('.popup__form-name_type_photo');
-const popupSecondName = document.querySelector('.popup__form-second-name_type_photo');
+const PhotoName = document.querySelector('.popup__form-name_type_photo');
+const photoURL = document.querySelector('.popup__form-second-name_type_photo');
 const closeAddPhotoPopup = document.querySelector('.popup__close_type_photo');
 const saveAddphotoPopup = document.querySelector('.popup__save_type_photo');
 const addphotoPopupinfo = document.querySelector('.popup__info_type_photo');;
-const PhotoName = document.querySelector('.popup__form-name_type_photo')
-const photoURL = document.querySelector('.popup__form-second-name_type_photo');
 const gallery = document.querySelector('.gallery');
 let initialCards = [
     {
@@ -176,9 +174,9 @@ saveprofileButton.addEventListener('click', () => {
 addPhotoButton.addEventListener('click', () => {
     openPopup(addPhotoPopup);
     startAnimationPopup(addphotoPopupinfo);
-    popupName.value = '';
-    popupSecondName.value = '';
-    console.log(popupName.value, popupSecondName.value);
+    PhotoName.value = '';
+    photoURL.value = '';
+    console.log(PhotoName.value, photoURL.value);
 })
 
 
@@ -188,12 +186,26 @@ closeAddPhotoPopup.addEventListener('click', () => {
 
 
 saveAddphotoPopup.addEventListener('click', () => {
-        closePopup(addPhotoPopup);
-        initialCards.unshift({name: `${PhotoName.value}`, link: `${photoURL.value}`});
-        console.log(initialCards)
-        photo(initialCards[0].link, initialCards[0].name)
+    closePopup(addPhotoPopup);
+    initialCards.unshift({name: `${PhotoName.value}`, link: `${photoURL.value}`});
+    console.log(initialCards)
+    photo(initialCards[0].link, initialCards[0].name)
 })
 
+
+function validation() {
+    const formTypePhoto = document.querySelector('.popup__form_type_photo');
+    formTypePhoto.addEventListener('click', (evt) => {
+        let formError = formTypePhoto.querySelector(`.${evt.target.id}-error`)
+        evt.target.addEventListener('input', () => {
+            if(!evt.target.valid) {
+                formError.classList.add(`${evt.target.id}-error_active`);
+                formError.textContent = evt.target.validationMessage;
+            }
+            })
+    })
+}
+validation()
 
 
 

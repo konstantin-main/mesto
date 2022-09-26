@@ -45,7 +45,7 @@
             <h1 class="popup__title popup__title_type_profile">Редактировать профиль</h1>
             <form action="" class="popup__form popup__form_type_profile">
                 <input type="text" class="popup__form-name popup__form-name_type_profile" name="your name">
-                <input type="url" class="popup__form-second-name popup__form-second-name_type_profile" name="your second name">
+                <input type="text" class="popup__form-second-name popup__form-second-name_type_profile" name="your second name">
                 <input type="button" class="popup__save popup__save_type_profile" value="Сохранить">
                 <button type="button" class="popup__close popup__close_type_profile"><img src="./pictures/Close edit.svg" alt="close button" class="close__edit-image"></button>
             </form>
@@ -54,9 +54,11 @@
     <div class="popup popup_type_photo">
         <div class="popup__info popup__info_type_photo">
             <h1 class="popup__title popup__title_type_photo">Новое место</h1>
-            <form action="" class="popup__form popup__form_type_photo">
-                <input type="text" class="popup__form-name popup__form-name_type_photo" name="your name" placeholder="Название места">
-                <input type="photo" class="popup__form-second-name popup__form-second-name_type_photo" name="your second name" placeholder="Вставьте ссылку">
+            <form  class="popup__form popup__form_type_photo" >
+                <input type="text" id="place-name" class="popup__form-name popup__form-name_type_photo" name="your name" placeholder="Название места" minlength="4" required>
+                <span class="place-name-error"></span>
+                <input type="url" id="url-name" class="popup__form-second-name popup__form-second-name_type_photo" name="your second name" placeholder="Вставьте ссылку" minlength="4" required>
+                <span class="url-name-error"></span>
                 <input type="button" class="popup__save popup__save_type_photo" value="Сохранить">
                 <button type="button" class="popup__close popup__close_type_photo"><img src="./pictures/Close edit.svg" alt="close button" class="close__edit-image"></button>
             </form>

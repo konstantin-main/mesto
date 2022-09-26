@@ -1,9 +1,12 @@
 .popup__form {
-    display: -ms-grid;
+  display: flex;
+  flex-direction: column;
+  
+    /* display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 30px; */
     position: relative;
   }
   
