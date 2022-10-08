@@ -40,30 +40,66 @@
             <p class="footer__text">© 2020 Mesto Russia</p>
         </footer>
     </div>
-    <div class="popup popup_type_profie">
+    <!-- <div class="popup popup_type_profie">
         <div class="popup__info popup__info_type_profile">
             <h1 class="popup__title popup__title_type_profile">Редактировать профиль</h1>
-            <form action="" class="popup__form popup__form_type_profile">
-                <input type="text" class="popup__form-name popup__form-name_type_profile" name="your name">
-                <input type="text" class="popup__form-second-name popup__form-second-name_type_profile" name="your second name">
+            <form action="" class="form popup__form popup__form_type_profile">
+                <input type="text" id="profile-name" class="form__input popup__form-name popup__form-name_type_profile" name="your name" minlength="4" maxlength="20">
+                <span class="error-name profile-name-error"></span>
+                <input type="text" id="profile-second-name" class="form__input popup__form-second-name popup__form-second-name_type_profile" name="your second name" minlength="4" maxlength="20">
+                <span class="error-name profile-second-name-error"></span>
                 <input type="button" class="popup__save popup__save_type_profile" value="Сохранить">
                 <button type="button" class="popup__close popup__close_type_profile"><img src="./pictures/Close edit.svg" alt="close button" class="close__edit-image"></button>
             </form>
         </div>
-    </div>
-    <div class="popup popup_type_photo">
+    </div> -->
+    <div class="popup popup_type_profie">
+            <div class="popup__info popup__info_type_profile">
+                <h1 class="popup__title popup__title_type_profile">Редактировать профиль</h1>
+                <form action="" class="popup__form popup__form_type_profile">
+                    <label class="input-space">
+                    <input type="text" id="profile-name" class="form__input form__input-profile-name" minlength="4" maxlength="20" required>
+                    <span class="error-name profile-name-error"></span>
+                    </label>
+                    <label class="input-space">
+                    <input type="text" id="profile-second-name" class="form__input form__input-profile-second-name" minlength="4" maxlength="20" required>
+                    <span class="error-name profile-second-name-error"></span>
+                    </label>
+                    <input type="button" class="popup__save popup__save_type_profile" value="Сохранить">
+                    <button type="button" class="popup__close"><img src="./pictures/Close edit.svg" alt="close button" class="close__edit-image"></button>
+                </form>
+            </div>
+        </div> 
+        <div class="popup popup_type_photo">
+            <div class="popup__info popup__info_type_photo">
+                <h1 class="popup__title popup__title_type_photo">Новое место</h1>
+                <form action="" class="popup__form popup__form_type_photo">
+                    <label class="input-space">
+                    <input type="text" id="place-name" class="form__input form__input-photo-name" minlength="4" maxlength="20" required placeholder="Название места">
+                    <span class="error-name place-name-error"></span>
+                    </label>
+                    <label class="input-space">
+                    <input type="url" id="photo-url" class="form__input form__input-photo-url"  required placeholder="Вставьте ссылку">
+                    <span class="error-name photo-url-error"></span>
+                    </label>
+                    <input type="button" class="popup__save popup__save_type_photo" value="Сохранить">
+                    <button type="button" class="popup__close popup__close_type_photo"><img src="./pictures/Close edit.svg" alt="close button" class="close__edit-image"></button>
+                </form>
+            </div>
+        </div> 
+    <!-- <div class="popup popup_type_photo">
         <div class="popup__info popup__info_type_photo">
             <h1 class="popup__title popup__title_type_photo">Новое место</h1>
-            <form  class="popup__form popup__form_type_photo" >
-                <input type="text" id="place-name" class="popup__form-name popup__form-name_type_photo" name="your name" placeholder="Название места" minlength="4" required>
-                <span class="place-name-error"></span>
-                <input type="url" id="url-name" class="popup__form-second-name popup__form-second-name_type_photo" name="your second name" placeholder="Вставьте ссылку" minlength="4" required>
-                <span class="url-name-error"></span>
+            <form  class="form popup__form popup__form_type_photo" >
+                <input type="text" id="place-name" class="form__input popup__form-name popup__form-name_type_photo" name="your name" placeholder="Название места" minlength="4" required>
+                <span class="error-name place-name-error"></span>
+                <input type="url" id="url-name" class="form__input popup__form-second-name popup__form-second-name_type_photo" name="your second name" placeholder="Вставьте ссылку" minlength="4" required>
+                <span class="error-name url-name-error"></span>
                 <input type="button" class="popup__save popup__save_type_photo" value="Сохранить">
                 <button type="button" class="popup__close popup__close_type_photo"><img src="./pictures/Close edit.svg" alt="close button" class="close__edit-image"></button>
             </form>
         </div>
-    </div>
+    </div> -->
     <section class="photo__popup">
         <template id="popup__type_increase-photo">
             <div class="popup popup_active popup__type_increase-photo">

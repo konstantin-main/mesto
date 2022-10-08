@@ -1,6 +1,5 @@
-
-.popup__form-name {
-  margin: 0 0 30px 0;
+.form__input {
+  margin: 0 0 3px 0;
   padding: 0;
   width: 100%;
   border: none;
@@ -9,7 +8,7 @@
 }
 
 
-.popup__form-name_type_photo {
+/* .popup__form-name_type_photo {
     margin: 0 0 3px 0;
   }
 
@@ -23,6 +22,6 @@
   }
 
 
-  .place-name-error_active {
+  .form__input-error_active {
     opacity: 1;
-  }
+  } */

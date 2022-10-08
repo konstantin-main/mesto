@@ -1,16 +1,16 @@
 const editbutton = document.querySelector('.edit__button');
 const profilePopup = document.querySelector('.popup_type_profie');
 const profilePopupInfo = document.querySelector('.popup__info_type_profile')
-const profilePopupName = document.querySelector('.popup__form-name_type_profile');
+const profilePopupName = document.querySelector('.form__input-profile-name');
 const profileName = document.querySelector('.profile__info-header-title');
-const profilePopupSecondName = document.querySelector('.popup__form-second-name_type_profile');
+const profilePopupSecondName = document.querySelector('.form__input-profile-second-name');
 const profileSecondName = document.querySelector('.profile__info-subtitle');
-const closeProfileButton = document.querySelector('.popup__close_type_profile')
+const closeProfileButton = document.querySelector('.popup__close')
 const saveprofileButton = document.querySelector('.popup__save_type_profile')
 const addPhotoButton = document.querySelector('.add__photo');
 const addPhotoPopup = document.querySelector('.popup_type_photo');
-const PhotoName = document.querySelector('.popup__form-name_type_photo');
-const photoURL = document.querySelector('.popup__form-second-name_type_photo');
+const PhotoName = document.querySelector('.form__input-photo-name');
+const photoURL = document.querySelector('.form__input-photo-url');
 const closeAddPhotoPopup = document.querySelector('.popup__close_type_photo');
 const saveAddphotoPopup = document.querySelector('.popup__save_type_photo');
 const addphotoPopupinfo = document.querySelector('.popup__info_type_photo');;
@@ -71,6 +71,20 @@ let photos = photoContainer.querySelector('.photo');
 let disabledLikes = photoContainer.querySelectorAll('.photo__grade');
 let PhotoTitle = photoContainer.querySelector('.photo__info-title');
 let body =document.querySelector('.root')
+const forms = document.querySelectorAll('.popup__form');
+// Находим все наши формы
+
+
+const hasInvalidInput = (arrFormElements) => {
+     // проходим по этому массиву методом some
+     return arrFormElements.some((arrFormElement) => {
+           // Если поле не валидно, колбэк вернёт true
+       // Обход массива прекратится и вся функция
+       // hasInvalidInput вернёт true
+   
+       return !arrFormElement.validity.valid;
+     })
+   };
 
 
 
@@ -146,6 +160,47 @@ function increasePhoto(photoMeaning, photoNaming) {
 };
 
 
+forms.forEach((form) => {
+    // Проходим по каждой форме отдельно
+    let saveButton = form.querySelector('.popup__save')
+    // Находим в каждой форме кнопку сохранить или продолжить
+    let arrFormElements = Array.from(form.querySelectorAll('.form__input'));
+    // Ищем все инпуты в форме
+    saveButton.disabled = true
+    saveButton.classList.add('popup__save_disabled');
+    // ставим изнаально кнопке сохранить или продолжить статус "отключен"
+    console.log(saveButton);
+    hasInvalidInput(arrFormElements);
+    // Вызываем функцию проверки валидности всех форм
+    
+  
+    arrFormElements.forEach((formElement) => {
+    // проходимся по каждому инпуту
+         formElement.addEventListener('input', () => {
+              // добавляем слушатель на инпут
+              let error = form.querySelector(`.${formElement.id}-error`)
+              // находим текстовое поле под инпутом для ошибки
+              if(!formElement.validity.valid) {
+                   // если поле не валидно то покажи сообщение об ошибке и оставь кнопку сохранить в состоянии "неактивно"
+                   error.textContent = formElement.validationMessage;
+                   saveButton.disabled = true
+              } else {
+                   error.textContent = '' 
+                   if(!hasInvalidInput(arrFormElements)) {
+                        // если все элементы формы валидны, то разблокируй кнопку "сохранить"
+                        saveButton.disabled = false 
+                        saveButton.classList.remove('popup__save_disabled')
+                   };   
+              }
+              
+         })
+    })
+
+})
+
+
+
+
 photos.addEventListener('click',  (event)=> {
     console.log(event.target)
 })
@@ -182,30 +237,25 @@ addPhotoButton.addEventListener('click', () => {
 
 closeAddPhotoPopup.addEventListener('click', () => {
     closePopup(addPhotoPopup);
+    let errors = document.querySelectorAll('.error');
+
 })
 
 
-saveAddphotoPopup.addEventListener('click', () => {
-    closePopup(addPhotoPopup);
-    initialCards.unshift({name: `${PhotoName.value}`, link: `${photoURL.value}`});
-    console.log(initialCards)
-    photo(initialCards[0].link, initialCards[0].name)
-})
+ saveAddphotoPopup.addEventListener('click', () => {
+     closePopup(addPhotoPopup);
+     initialCards.unshift({name: `${PhotoName.value}`, link: `${photoURL.value}`});
+     console.log(initialCards)
+     photo(initialCards[0].link, initialCards[0].name)
+ })
 
 
-function validation() {
-    const formTypePhoto = document.querySelector('.popup__form_type_photo');
-    formTypePhoto.addEventListener('click', (evt) => {
-        let formError = formTypePhoto.querySelector(`.${evt.target.id}-error`)
-        evt.target.addEventListener('input', () => {
-            if(!evt.target.valid) {
-                formError.classList.add(`${evt.target.id}-error_active`);
-                formError.textContent = evt.target.validationMessage;
-            }
-            })
-    })
-}
-validation()
+
+
+
+
+
+
 
 
 

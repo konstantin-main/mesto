@@ -11,6 +11,10 @@
     transition: 0.3s linear;
     cursor: pointer;
   }
+
+  .popup__save_disabled {
+    opacity: .8;
+  }
   
   @media screen and (max-width: 610px) {
     .popup__save {
@@ -19,4 +23,8 @@
   }
   .popup__save:hover {
     opacity: 0.8;
+  }
+
+  .form__submit_inactive{
+    opacity: .5;
   }
